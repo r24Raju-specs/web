@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task list Manager</title>
+    <style>
+
+        #taskitem{
+                background-color: darkgrey;
+        }
+
+        li {
+            list-style: none;
+            padding: 5px;
+            border: 1px solid gray;
+        }
+
+        button{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Enter your task</h2>
+    <input type="text" id="task">
+    <button onclick="addtask()">ADD</button>
+
+    <ul id="taskitem"></ul>
+
+    <script>
+        function addtask() {
+            let input = document.getElementById("task");
+            let task = input.value.trim();
+
+            if (task == "") {
+                alert("please enter a task");
+                return
+            }
+
+            let li = document.createElement("li");
+            li.textContent = task;
+
+            let btn = document.createElement("button");
+            btn.textContent = "Delete";
+
+            btn.onclick = function(){
+                li.remove();
+            }
+
+            li.appendChild(btn);
+
+            document.getElementById("taskitem").appendChild(li);
+
+            input.value = "";
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <button id="toggle">Toggle</button>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="animate">Animate</button>
+
+    <script>
+        $("#toggle").click(function(){
+            $("div").toggle();
+        });
+
+        $("#hide").click(function(){
+            $("div").hide();
+        });
+
+        $("#show").click(function(){
+            $("div").show();
+        });
+
+        $("#animate").click(function(){
+            $("div").animate({
+                left : "1000px",
+                height : "200px",
+                width : "200px"
+            }, 2000);
+            });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <h2>Student detail</h2>
+    <button id="btn">Load Data</button>
+
+    <div id="result"></div>
+
+    <script>
+    $("#btn").click(function(){
+
+        $.ajax({
+            url: "http://172.16.5.154:4000/api/getAll/harshawar",
+            method: "GET",
+
+            success: function(data){
+                let output = "";
+
+                data.forEach(function(item){
+                    output += `
+                    <div class="card">
+                        <p>Name: ${item.Name}</p>
+                        <p>Title: ${item.Title}</p>
+                        <p>Total: ${item.Total}</p>
+                        <p>Remark: ${item.Remark}</p>
+                    </div>`;
+                });
+
+                $("#result").html(output);
+            },
+
+            error: function(){
+                alert("Error in fetching detail");
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

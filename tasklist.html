@@ -44,14 +44,6 @@
             let li = document.createElement("li");
             li.textContent = task;
 
-            let btn = document.createElement("button");
-            btn.textContent = "Delete";
-
-            btn.onclick = function(){
-                li.remove();
-            }
-
-            li.appendChild(btn);
 
             document.getElementById("taskitem").appendChild(li);
 

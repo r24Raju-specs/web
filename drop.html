@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <body>
 
-<h3>Select City</h3>
+    <h3>Select City</h3>
 
-<select id="city" onchange="showCity()">
-  <option value="">Select</option>
-  <option value="Mumbai">Mumbai</option>
-  <option value="Pune">Pune</option>
-  <option value="Delhi">Delhi</option>
-</select>
+    <select id="city" onchange="showCity()">
+        <option value="">Select</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Pune">Pune</option>
+        <option value="Delhi">Delhi</option>
+    </select>
 
-<p id="result"></p>
+    <p id="result"></p>
 
-<script>
-function showCity() {
-  let city = document.getElementById("city").value;
-  document.getElementById("result").innerHTML = "Selected city is: " + city;
-}
-</script>
+    <script>
+        function showCity() {
+            let city = document.getElementById("city").value;
+            document.getElementById("result").innerHTML = "Selected city is: " + city;
+        }
+    </script>
 
 </body>
+
 </html>
